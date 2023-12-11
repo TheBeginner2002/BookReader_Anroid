@@ -1,0 +1,10 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.BookReader" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <item name="colorPrimary">@color/design_default_color_primary</item>
+        <item name="colorSecondary">@color/design_default_color_on_secondary</item>
+    </style>
+
+    <style name="Theme.BookReader" parent="Base.Theme.BookReader" />
+</resources>
