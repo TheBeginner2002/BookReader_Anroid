@@ -24,7 +24,7 @@ import java.util.ArrayList;
  * Use the {@link HomeFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class HomeFragment extends Fragment {
+public class HomeFragment extends Fragment implements BookAdepter.MyViewHolder.OnBookListener {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -89,5 +89,10 @@ public class HomeFragment extends Fragment {
         recyclerView.setLayoutManager(new GridLayoutManager(getContext(),numberOfColumn));
 
         recyclerView.setAdapter(bookAdepter);
+    }
+
+    @Override
+    public void onBookClick(int position) {
+
     }
 }

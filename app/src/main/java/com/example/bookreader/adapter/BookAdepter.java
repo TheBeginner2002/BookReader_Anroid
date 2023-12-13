@@ -18,6 +18,9 @@ import java.util.ArrayList;
 public class BookAdepter extends RecyclerView.Adapter<BookAdepter.MyViewHolder> {
     private ArrayList<BookModel> bookData;
 
+    private MyViewHolder.OnBookListener mOnBookListener;
+
+
     public BookAdepter(ArrayList<BookModel> bookData) {
 
         this.bookData = bookData;
@@ -42,7 +45,7 @@ public class BookAdepter extends RecyclerView.Adapter<BookAdepter.MyViewHolder> 
         return bookData.size();
     }
 
-    public static class MyViewHolder extends RecyclerView.ViewHolder {
+    public static class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
         ImageView bookImage;
         TextView bookName;
 
@@ -51,6 +54,17 @@ public class BookAdepter extends RecyclerView.Adapter<BookAdepter.MyViewHolder> 
 
             bookImage = itemView.findViewById(R.id.book_image);
             bookName = itemView.findViewById(R.id.book_name);
+
+            itemView.setOnClickListener(this);
+        }
+
+        @Override
+        public void onClick(View view) {
+
+        }
+
+        public interface OnBookListener{
+            void onBookClick(int position);
         }
     }
 }
